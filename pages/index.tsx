@@ -8,6 +8,7 @@ import SearchArea from "@/components/SearchArea";
 export default function Home() {
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   return (
     <>
@@ -17,12 +18,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main className="bg-cyan-700">
         <SearchArea
           searchInput={searchInput}
           setSearchResults={setSearchResults}
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
         />
-        <ResultsArea searchResults={searchResults} />
+        <ResultsArea
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+        />
       </main>
     </>
   );

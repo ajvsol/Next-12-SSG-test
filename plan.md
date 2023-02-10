@@ -1,17 +1,16 @@
 Todo:
 
-- Add SearchArea component - input box and submit button
-- Save an example API data in state
-- Add ResultsArea - 3 columns of beer pictures and names
+- [x] Add SearchArea component - input box and submit button
+- [x] Add ResultsArea - 3 columns of beer pictures and names
   - Each picture links to a beer page
   - set results to 30
     - https://api.punkapi.com/v2/beers?page=2&per_page=30 on page mount send this fetch saved in state?
--
+- [ ] scroll-y event listener (infinite scroll)
+  - [ ] fetch next page
+  - [ ] append to results
+- [ ] clicking on cards links to beer page
 
--pagination or infinate scroll? 
-
-ScrollY event sends fetch for next page?
----
+-pagination or infinite scroll?
 
 # API Documentation
 
