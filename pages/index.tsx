@@ -7,6 +7,8 @@ import SearchArea from "@/components/SearchArea";
 import Hero from "@/components/Hero";
 import { Beer } from "@/types/types";
 import { GetServerSideProps } from "next";
+import Link from "next/link";
+import BeerCard from "@/components/BeerCard";
 
 export const getServerSideProps: GetServerSideProps = async () => {
   console.log(`getServerSideProps`);
@@ -46,13 +48,21 @@ export default function Home({ data }: any) {
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
         />
-        <ResultsArea
-          data={data}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
-          pageNumber={pageNumber}
-          setPageNumber={setPageNumber}
-        />
+        <div className="grid grid-cols-3 h-full w-full bg-cyan-700 gap-20">
+          {data?.map((el: Beer) => {
+            return (
+              <Link href={`/beers/${el.id}`} key={el.id}>
+                <BeerCard
+                  key={el.id}
+                  name={el.name}
+                  tagline={el.tagline}
+                  abv={el.abv}
+                  image_url={el.image_url}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </main>
     </>
   );

@@ -1,13 +1,16 @@
 import React from "react";
 import { Beer } from "@/types/types";
 import BeerCard from "@/components/BeerCard";
+import { getServerSideProps } from "../index";
 
 interface ResultsAreaProps {
-  searchResults?: Beer[] | null;
+  //searchResults?: Beer[] | null;
   data: any;
 }
 
-export default function ResultsArea({ searchResults, data }: ResultsAreaProps) {
+export default function ResultsArea({ getServerSideProps }: any) {
+  const data = getServerSideProps;
+
   if (data !== null) {
     return (
       <div>
