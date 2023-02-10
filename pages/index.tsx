@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
-import SearchArea from "./components/SearchArea";
-import ResultsArea from "./components/ResultsArea"
+import ResultsArea from "@/components/ResultsArea";
+import SearchArea from "@/components/SearchArea";
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState("");
@@ -22,7 +22,7 @@ export default function Home() {
           searchInput={searchInput}
           setSearchResults={setSearchResults}
         />
-        <ResultsArea searchResults={searchResults}/>
+        <ResultsArea searchResults={searchResults} />
       </main>
     </>
   );
