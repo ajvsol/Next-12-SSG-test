@@ -14,7 +14,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   console.log(`getServerSideProps`);
 
   const res = await fetch(
-    `https://api.punkapi.com/v2/beers?page=1&per_page=30`
+    `https://api.punkapi.com/v2/beers?page=1&per_page=80`
   );
 
   console.log(`getServerSideProp fetch`);
