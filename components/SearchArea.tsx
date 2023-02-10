@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import useFetch from "../hooks/useFetch";
+import Link from "next/link";
 
 export type SearchProps = {
   searchInput: string;

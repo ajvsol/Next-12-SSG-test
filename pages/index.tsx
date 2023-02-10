@@ -5,8 +5,27 @@ import { useEffect, useState } from "react";
 import ResultsArea from "@/components/ResultsArea";
 import SearchArea from "@/components/SearchArea";
 import Hero from "@/components/Hero";
+import { Beer } from "@/types/types";
+import { GetServerSideProps } from "next";
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps = async () => {
+  console.log(`getServerSideProps`);
+
+  const res = await fetch(
+    `https://api.punkapi.com/v2/beers?page=1&per_page=30`
+  );
+
+  console.log(`getServerSideProp fetch`);
+
+  const data = await res.json();
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+export default function Home({ data }: any) {
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
@@ -28,6 +47,7 @@ export default function Home() {
           setPageNumber={setPageNumber}
         />
         <ResultsArea
+          data={data}
           searchResults={searchResults}
           setSearchResults={setSearchResults}
           pageNumber={pageNumber}
