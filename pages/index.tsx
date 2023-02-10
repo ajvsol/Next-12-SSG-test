@@ -41,14 +41,14 @@ export default function Home({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-cyan-700">
-        <Hero />
+        <Hero heading="Brewdog project" message="no idea what to write here yet :)" />
         <SearchArea
           searchInput={searchInput}
           setSearchResults={setSearchResults}
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
         />
-        <div className="grid grid-cols-3 h-full w-full bg-cyan-700 gap-20">
+        <div className="ml-8 grid grid-cols-3 h-full w-full bg-cyan-700 gap-10">
           {data?.map((el: Beer) => {
             return (
               <Link href={`/beers/${el.id}`} key={el.id}>
