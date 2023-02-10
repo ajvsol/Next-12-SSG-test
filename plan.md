@@ -8,6 +8,9 @@ Todo:
     - https://api.punkapi.com/v2/beers?page=2&per_page=30 on page mount send this fetch saved in state?
 -
 
+-pagination or infinate scroll? 
+
+ScrollY event sends fetch for next page?
 ---
 
 # API Documentation

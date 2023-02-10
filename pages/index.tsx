@@ -3,10 +3,11 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import SearchArea from "./components/SearchArea";
+import ResultsArea from "./components/ResultsArea"
 
 export default function Home() {
   const [searchInput, setSearchInput] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(null);
 
   return (
     <>
@@ -21,6 +22,7 @@ export default function Home() {
           searchInput={searchInput}
           setSearchResults={setSearchResults}
         />
+        <ResultsArea searchResults={searchResults}/>
       </main>
     </>
   );
