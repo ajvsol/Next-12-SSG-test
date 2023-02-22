@@ -25,10 +25,12 @@ export default function BeerPage({ data }: any) {
         <div className="bg-cyan-200 h-full w-128 flex flex-col justify-center items-center p-10 gap-3  rounded-3xl
       shadow-md
       shadow-cyan-900">
-      <Image src={data[0].image_url} alt="image" width={150} height={150} />
-          <h1 className="text-xl text-slate-900 font-bold">{data[0].name}</h1>
-          <h2 className="text-lg text-slate-900 ">{data[0].tagline}</h2>
+      <Image src={data[0].image_url} alt="image" width={130} height={130} />
+          <h1 className="text-4xl text-slate-900 font-bold">{data[0].name}</h1>
+          <h2 className="text-md text-slate-900 ">"{data[0].tagline}"</h2>
           <h3 className="text-lg text-cyan-800 font-semibold">{data[0].abv}% ABV</h3>
+          <p className="text-lg text-slate-900 ">{data[0].description} </p>
+          
           </div>
       </div>
     </div>

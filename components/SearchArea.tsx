@@ -41,7 +41,7 @@ export default function SearchArea({
   return (
     <div data-testid="SearchArea" className=" flex justify-center p-10">
       <input
-        className="w-80 h-10 bg-cyan-50 text-slate-900 border-cyan-400 border-2 rounded-md text-sm px-2 focus:ring-cyan-200 focus:ring-4"
+        className="w-80 h-10 bg-cyan-50 text-slate-900 border-cyan-400 border-2 rounded-md text-sm px-2 focus:ring-emerald-300 focus:ring-3"
         placeholder="Type in your search here"
       ></input>
       <button
@@ -57,8 +57,8 @@ export default function SearchArea({
         shadow-md
         shadow-cyan-900
         z-10
-        hover:bg-emerald-400 
-        hover:border-emerald-400
+        hover:bg-emerald-300 
+        hover:border-emerald-300
         hover:text-slate-900 "
       >
         SEARCH
