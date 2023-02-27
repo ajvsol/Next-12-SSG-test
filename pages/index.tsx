@@ -48,8 +48,8 @@ export default function Home({ data }: any) {
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
         />
-        <div className="flex justify-center items-center p-10">
-        <div className="flex flex-col justify-between items-center  lg:grid grid-cols-3 xl:grid-cols-3 h-full w-full bg-cyan-700 gap-4">
+        <div className="container m-auto">
+        <div className="flex flex-col justify-between items-center  lg:grid grid-cols-3 2xl:grid-cols-4 h-full w-full bg-cyan-700 gap-10">
           {data?.map((el: Beer) => {
             return (
               <Link href={`/beers/${el.id}`} key={el.id}>

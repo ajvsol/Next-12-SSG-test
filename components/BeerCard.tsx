@@ -36,7 +36,9 @@ export default function BeerCard({
       rounded-3xl
       shadow-md
       shadow-cyan-900
-      text-center"
+      text-center
+      m-auto"
+      
     >
       <div className="max-h-80">
         <Image src={image_url} alt={name} height={50} width={50} />
