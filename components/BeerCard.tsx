@@ -25,7 +25,9 @@ export default function BeerCard({
       justify-center
       items-center
       w-96
+      lg:w-80
       h-96
+      lg:h-90
       p-10
       gap-3
       border-box
