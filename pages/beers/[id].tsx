@@ -106,7 +106,7 @@ export default function BeerPage({ data }: any) {
             />
           </div>
           <div className="text-center p-4">
-          <h1 className="text-3xl text-slate-800 font-bold p-20">
+          <h1 className="text-3xl text-slate-800 font-bold p-2">
             {data[0].name}
             </h1>
           <h2 className="text-md text-slate-900">"{data[0].tagline}"</h2>
