@@ -105,7 +105,7 @@ export default function BeerPage({ data }: any) {
               height={130}
             />
           </div>
-          <div className="text-center p-4">
+          <div className="text-center p-4 m-auto">
           <h1 className="text-3xl text-slate-800 font-bold p-2">
             {data[0].name}
             </h1>
