@@ -20,6 +20,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   console.log(`getServerSideProp fetch`);
 
   const data = await res.json();
+
+  console.dir(`data:`, data);
   return {
     props: {
       data,
@@ -41,7 +43,10 @@ export default function Home({ data }: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-cyan-700">
-        <Hero heading="Brewdog project" message="no idea what to write here yet :)" />
+        <Hero
+          heading="Brewdog project"
+          message="no idea what to write here yet :)"
+        />
         <SearchArea
           searchInput={searchInput}
           setSearchResults={setSearchResults}
@@ -49,22 +54,22 @@ export default function Home({ data }: any) {
           setPageNumber={setPageNumber}
         />
         <div className="container m-auto">
-        <div className="flex flex-col justify-between items-center  lg:grid grid-cols-3 2xl:grid-cols-4 h-full w-full bg-cyan-700 gap-10">
-          {data?.map((el: Beer) => {
-            return (
-              <Link href={`/beers/${el.id}`} key={el.id}>
-                <BeerCard
-                  key={el.id}
-                  name={el.name}
-                  tagline={el.tagline}
-                  abv={el.abv}
-                  image_url={el.image_url}
-                />
-              </Link>
-            );
-          })}
+          <div className="flex flex-col justify-between items-center  lg:grid grid-cols-3 2xl:grid-cols-4 h-full w-full bg-cyan-700 gap-10">
+            {data?.map((el: Beer) => {
+              return (
+                <Link href={`/beers/${el.id}`} key={el.id}>
+                  <BeerCard
+                    key={el.id}
+                    name={el.name}
+                    tagline={el.tagline}
+                    abv={el.abv}
+                    image_url={el.image_url}
+                  />
+                </Link>
+              );
+            })}
           </div>
-          </div>
+        </div>
       </main>
     </>
   );
