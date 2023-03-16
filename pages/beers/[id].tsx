@@ -74,7 +74,7 @@ export default function BeerPage({ data }: any) {
         hover:border-emerald-300
         hover:text-slate-900 "
         >
-          Back to home
+          HOME
         </button>
       </Link>
       </div>
@@ -88,21 +88,21 @@ export default function BeerPage({ data }: any) {
           
             <Image src={data[0].image_url} alt="image" width={130} height={130} />
             </div>
-          <h1 className="text-2xl text-slate-900 font-bold">{data[0].name}</h1>
+          <h1 className="text-3xl text-slate-800 font-bold text-center">{data[0].name}</h1>
           <h2 className="text-md text-slate-900 ">"{data[0].tagline}"</h2>
-          <h3 className="text-lg text-cyan-800 font-semibold">
+          <h3 className="text-2xl text-cyan-800 ">
             {data[0].abv}% ABV
           </h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <p className="text-lg text-slate-900 ">{data[0].description} </p>
-          <h3 className="text-xl text-cyan-800 ">Food Pairings:</h3>
+          <h3 className="text-2xl text-cyan-800 ">Food Pairings:</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           {data[0].food_pairing.map((food: any) => {
             return <p className="text-md text-slate-900 " key={food}>{food}</p>;
           })}
-          <h3 className="text-xl  text-cyan-800  text-left">Ingredients:</h3>
-          <h4 className="text-lg  text-cyan-800  text-left ">Malts:</h4>
+          <h3 className="text-2xl  text-cyan-800  text-left">Ingredients:</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
+          <h4 className="text-xl  text-cyan-800   text-left ">Malts:</h4>
           <ul>
             {ingred.malt.map((malt: any) => (
               <li className="text-md text-slate-900 text-left " key={malt.name}>
@@ -110,8 +110,8 @@ export default function BeerPage({ data }: any) {
               </li>
             ))}
           </ul>
-          <h4 className="text-lg  text-cyan-800  text-left">Hops:</h4>
-          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
+          <h4 className="text-xl  text-cyan-800   text-left">Hops:</h4>
+          
           <ul>
             {ingred.hops.map((hop: any) => (
               <li className="text-md text-slate-900 text-left " key={hop.name}>
@@ -119,8 +119,8 @@ export default function BeerPage({ data }: any) {
               </li>
             ))}
           </ul>
-          <h4 className="text-lg  text-cyan-800  text-left">Yeast:</h4>
-          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
+          <h4 className="text-xl  text-cyan-800   text-left">Yeast:</h4>
+        
           <p className="text-md text-slate-900 text-left">{ingred.yeast}</p>
         </div>
         <div className=" flex p-5 gap-5">
@@ -142,7 +142,7 @@ export default function BeerPage({ data }: any) {
         hover:text-slate-900 
         "
         >
-          Previous beer
+          PREV
         </button>
         <button
           onClick={redirectNextPage}
@@ -161,7 +161,7 @@ export default function BeerPage({ data }: any) {
         hover:border-emerald-300
         hover:text-slate-900 "
         >
-          Next beer
+          NEXT
           </button>
           </div>
       </div>
