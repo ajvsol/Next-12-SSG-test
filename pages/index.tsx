@@ -6,22 +6,20 @@ import ResultsArea from "@/components/ResultsArea";
 import SearchArea from "@/components/SearchArea";
 import Hero from "@/components/Hero";
 import { Beer } from "@/types/types";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Link from "next/link";
 import BeerCard from "@/components/BeerCard";
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  console.log(`getServerSideProps`);
+export const getStaticProps: GetStaticProps = async () => {
+  //console.log(`getServerSideProps`);
 
   const res = await fetch(
     `https://api.punkapi.com/v2/beers?page=1&per_page=80`
   );
 
-  console.log(`getServerSideProp fetch`);
-
   const data = await res.json();
 
-  console.dir(`data:`, data);
+  //console.dir(`data:`, data);
   return {
     props: {
       data,

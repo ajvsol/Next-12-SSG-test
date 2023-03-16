@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Beer } from "@/types/types";
@@ -6,13 +6,42 @@ import Hero from "@/components/Hero";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+// GetStaticPaths is used to generate the paths for the dynamic pages that are going to be pre-rendered
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch(
+    `https://api.punkapi.com/v2/beers?page=1&per_page=80`
+  );
+
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    paths: data.map((el: Beer) => {
+      params: {
+        id: el.id.toString();
+      }
+    }),
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   //console.log(`getServerSideProps`);
 
   const res = await fetch(`https://api.punkapi.com/v2/beers/${params?.id}`);
 
   const data = await res.json();
-  //console.log(data);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
