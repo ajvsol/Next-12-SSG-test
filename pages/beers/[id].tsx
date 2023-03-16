@@ -14,34 +14,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const data = await res.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
 
   return {
     paths: data.map((el: Beer) => {
-      params: {
-        id: el.id.toString();
+      return {
+        params: {
+          id: el.id.toString()
+        }
       }
-    }),
+}),
     fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  //console.log(`getServerSideProps`);
+  
 
   const res = await fetch(`https://api.punkapi.com/v2/beers/${params?.id}`);
 
   const data = await res.json();
-
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
 
   return {
     props: {
@@ -123,7 +114,7 @@ export default function BeerPage({ data }: any) {
           <p className="text-lg text-slate-900 ">{data[0].description} </p>
           <h3 className="text-2xl text-cyan-800 ">Food Pairings:</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
-          {data[0].food_pairing.map((food: any) => {
+          {data[0].food_pairing.map((food: string) => {
             return (
               <p className="text-md text-slate-900 " key={food}>
                 {food}
@@ -134,7 +125,7 @@ export default function BeerPage({ data }: any) {
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <h4 className="text-xl  text-cyan-800   text-left ">Malts:</h4>
           <ul>
-            {ingred.malt.map((malt: any) => (
+            {ingred.malt.map((malt:any) => (
               <li className="text-md text-slate-900 text-left " key={malt.name}>
                 {malt.name}
               </li>

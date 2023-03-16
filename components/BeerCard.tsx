@@ -6,7 +6,6 @@ export interface BeerCardProps {
   img?: string;
   tagline: string;
   abv: number;
-  key: number;
   image_url: string;
 }
 
@@ -15,7 +14,6 @@ export default function BeerCard({
   img,
   tagline,
   abv,
-  key,
   image_url,
 }: BeerCardProps) {
   return (

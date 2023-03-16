@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const data = await res.json();
 
-  //console.dir(`data:`, data);
+  console.dir(`data:`, data);
   return {
     props: {
       data,
@@ -57,7 +57,7 @@ export default function Home({ data }: any) {
               return (
                 <Link href={`/beers/${el.id}`} key={el.id}>
                   <BeerCard
-                    key={el.id}
+                    
                     name={el.name}
                     tagline={el.tagline}
                     abv={el.abv}
