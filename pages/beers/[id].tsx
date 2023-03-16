@@ -97,7 +97,7 @@ export default function BeerPage({ data }: any) {
       shadow-md
       shadow-cyan-900"
         >
-          <div className="m-auto pb-4">
+          <div className="m-auto">
             <Image
               src={data[0].image_url}
               alt="image"
@@ -105,10 +105,12 @@ export default function BeerPage({ data }: any) {
               height={130}
             />
           </div>
-          <h1 className="text-3xl text-slate-800 font-bold text-center">
+          <div className="text-center p-4">
+          <h1 className="text-3xl text-slate-800 font-bold p-20">
             {data[0].name}
-          </h1>
-          <h2 className="text-md text-slate-900 ">"{data[0].tagline}"</h2>
+            </h1>
+          <h2 className="text-md text-slate-900">"{data[0].tagline}"</h2>
+            </div>
           <h3 className="text-2xl text-cyan-800 ">{data[0].abv}% ABV</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <p className="text-lg text-slate-900 ">{data[0].description} </p>
