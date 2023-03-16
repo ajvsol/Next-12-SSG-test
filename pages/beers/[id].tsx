@@ -113,16 +113,18 @@ export default function BeerPage({ data }: any) {
             </div>
           <h3 className="text-2xl text-cyan-800 ">{data[0].abv}% ABV</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
-          <p className="text-lg text-slate-900 ">{data[0].description} </p>
+          <p className="text-md text-slate-900 ">{data[0].description} </p>
           <h3 className="text-2xl text-cyan-800 ">Food Pairings:</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
+          <ul>
           {data[0].food_pairing.map((food: string) => {
             return (
-              <p className="text-md text-slate-900 " key={food}>
+              <li className="text-md text-slate-900 " key={food}>
                 {food}
-              </p>
+              </li>
             );
           })}
+            </ul>
           <h3 className="text-2xl  text-cyan-800  text-left">Ingredients:</h3>
           <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <h4 className="text-xl  text-cyan-800   text-left ">Malts:</h4>
