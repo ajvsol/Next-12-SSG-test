@@ -80,40 +80,48 @@ export default function BeerPage({ data }: any) {
       </div>
       <div className="flex flex-col justify-center items-center ">
         <div
-          className="bg-cyan-200 h-full w-128 flex flex-col justify-center items-center p-10 gap-3  rounded-3xl
+          className="bg-cyan-200 h-full w-128 flex flex-col justify-center items-start p-10 gap-3  rounded-3xl
       shadow-md
       shadow-cyan-900"
         >
-          <Image src={data[0].image_url} alt="image" width={130} height={130} />
-          <h1 className="text-4xl text-slate-900 font-bold">{data[0].name}</h1>
+          <div className="m-auto pb-4">
+          
+            <Image src={data[0].image_url} alt="image" width={130} height={130} />
+            </div>
+          <h1 className="text-2xl text-slate-900 font-bold">{data[0].name}</h1>
           <h2 className="text-md text-slate-900 ">"{data[0].tagline}"</h2>
           <h3 className="text-lg text-cyan-800 font-semibold">
             {data[0].abv}% ABV
           </h3>
+          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <p className="text-lg text-slate-900 ">{data[0].description} </p>
-          <h3>Food Pairings:</h3>
+          <h3 className="text-xl text-cyan-800 ">Food Pairings:</h3>
+          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           {data[0].food_pairing.map((food: any) => {
-            return <p key={food}>{food}</p>;
+            return <p className="text-md text-slate-900 " key={food}>{food}</p>;
           })}
-          <h3>Ingredients:</h3>
-          <h4>Malts:</h4>
+          <h3 className="text-xl  text-cyan-800  text-left">Ingredients:</h3>
+          <h4 className="text-lg  text-cyan-800  text-left ">Malts:</h4>
+          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <ul>
             {ingred.malt.map((malt: any) => (
-              <li key={malt.name}>
-                {malt.name} - {malt.amount.value} {malt.amount.unit}
+              <li className="text-md text-slate-900 text-left " key={malt.name}>
+                {malt.name}
               </li>
             ))}
           </ul>
-          <h4>Hops:</h4>
+          <h4 className="text-lg  text-cyan-800  text-left">Hops:</h4>
+          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
           <ul>
             {ingred.hops.map((hop: any) => (
-              <li key={hop.name}>
-                {hop.name} - {hop.amount.value} {hop.amount.unit}, Add:{" "}
-                {hop.add}, Attribute: {hop.attribute}
+              <li className="text-md text-slate-900 text-left " key={hop.name}>
+                {hop.name}
               </li>
             ))}
           </ul>
-          <p>Yeast: {ingred.yeast}</p>
+          <h4 className="text-lg  text-cyan-800  text-left">Yeast:</h4>
+          <span className="h-1 w-full bg-cyan-700 lg:w-1/3"></span>
+          <p className="text-md text-slate-900 text-left">{ingred.yeast}</p>
         </div>
         <div className=" flex p-5 gap-5">
         <button
