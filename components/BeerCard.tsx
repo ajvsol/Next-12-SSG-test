@@ -35,7 +35,8 @@ export default function BeerCard({
       shadow-md
       shadow-cyan-900
       text-center
-      m-auto"
+      m-auto
+      font-Open"
       
     >
       <div className="max-h-80">

@@ -83,6 +83,7 @@ export default function BeerPage({ data }: any) {
         shadow-md
         shadow-cyan-900
         z-10
+        font-Open
         hover:bg-emerald-300 
         hover:border-emerald-300
         hover:text-slate-900 "
@@ -93,7 +94,7 @@ export default function BeerPage({ data }: any) {
       </div>
       <div className="flex flex-col justify-center items-center ">
         <div
-          className="bg-cyan-200 h-full w-128 flex flex-col justify-center items-start p-10 gap-3  rounded-3xl
+          className="bg-cyan-200 h-full w-128 flex flex-col justify-center font-Open items-start p-10 gap-3  rounded-3xl
       shadow-md
       shadow-cyan-900"
         >
@@ -157,7 +158,7 @@ export default function BeerPage({ data }: any) {
 
           <p className="text-md text-slate-900 text-left">{ingred.yeast}</p>
         </div>
-        <div className=" flex p-5 gap-5">
+        <div className=" font-Open flex p-5 gap-5">
           <button
             onClick={redirectPreviousPage}
             className="border-2
